@@ -10,17 +10,41 @@ static const char *fonts[]          = { "monospace:size=12" };
 static const char dmenufont[]       = "monospace:size=12";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
+static const char col_gray3[]       = "#ECEFF4";
+static const char col_gray4[]       = "#5E81AC";
 static const char col_cyan[]        = "#005577";
+static const char col1[]            = "#3498DB";
+static const char col2[]            = "#3498DB";
+static const char col3[]            = "#3498DB";
+static const char col4[]            = "#3498DB";
+static const char col5[]            = "#3498DB";
+static const char col6[]            = "#3498DB";
+static const char col7[]            = "#3498DB";
+static const char col8[]            = "#3498DB";
+static const char col9[]            = "#3498DB";
+static const char col10[]           = "#3498DB";
+static const char col11[]           = "#3498DB";
+static const char col12[]           = "#3498DB";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeNorm]  = { col_gray3, col_gray1, col_gray2 },
+	[SchemeCol1]  = { col1,      col_gray1, col_gray2 },
+	[SchemeCol2]  = { col2,      col_gray1, col_gray2 },
+	[SchemeCol3]  = { col3,      col_gray1, col_gray2 },
+	[SchemeCol4]  = { col4,      col_gray1, col_gray2 },
+	[SchemeCol5]  = { col5,      col_gray1, col_gray2 },
+	[SchemeCol6]  = { col6,      col_gray1, col_gray2 },
+	[SchemeCol7]  = { col7,      col_gray1, col_gray2 },
+	[SchemeCol8]  = { col8,      col_gray1, col_gray2 },
+	[SchemeCol9]  = { col8,      col_gray1, col_gray2 },
+	[SchemeCol10] = { col10,     col_gray1, col_gray2 },
+	[SchemeCol11] = { col11,     col_gray1, col_gray2 },
+	[SchemeCol12] = { col12,     col_gray1, col_gray2 },
+	[SchemeSel]   = { col_gray4, col_gray1,  col_cyan  },
 };
 
 /* tagging */
-static const char *tags[] = { "", "阮", "", "" };
+static const char *tags[] = { "", "", "", "阮", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -29,6 +53,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	{ "gnome-calculator",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
@@ -111,7 +136,9 @@ static Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+	{ ClkStatusText,        0,              Button1,        sigdwmblocks,   {.i = 1} },
+	{ ClkStatusText,        0,              Button2,        sigdwmblocks,   {.i = 2} },
+	{ ClkStatusText,        0,              Button3,        sigdwmblocks,   {.i = 3} },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
