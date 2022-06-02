@@ -45,7 +45,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "阮", "" };
+static const char *tags[] = { "", "", "", "", "阮", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -54,7 +54,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Gnome-calculator",     NULL,       NULL,       0,            1,           -1 },
+	{ "gnome-calculator",     NULL,       NULL,         0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "Pavucontrol",     NULL,       NULL,       0,            1,           -1 },
 	{ "MEGAsync",     NULL,       NULL,       0,            1,           -1 },
@@ -125,9 +125,10 @@ static Key keys[] = {
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
 	TAGKEYS(                        XK_4,                      3)
-	TAGKEYS(                        XK_8,                      4)
-	TAGKEYS(                        XK_9,                      5)
-	TAGKEYS(                        XK_0,                      6)
+	TAGKEYS(                        XK_7,                      4)
+	TAGKEYS(                        XK_8,                      5)
+	TAGKEYS(                        XK_9,                      6)
+	TAGKEYS(                        XK_0,                      7)
 	//TAGKEYS(                        XK_8,                      7)
 	//TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
