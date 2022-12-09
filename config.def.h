@@ -52,12 +52,13 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "gnome-calculator",     NULL,       NULL,         0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "Pavucontrol",     NULL,       NULL,       0,            1,           -1 },
-	{ "MEGAsync",     NULL,       NULL,       0,            1,           -1 },
+	/* class              instance    title                                   tags mask     isfloating   monitor */
+	{ "Gimp",             NULL,       NULL,                                   0,            1,           -1 },
+	{ "gnome-calculator", NULL,       NULL,                                   0,            1,           -1 },
+	{ "Firefox",          NULL,       NULL,                                   1 << 8,       0,           -1 },
+	{ "Pavucontrol",      NULL,       NULL,                                   0,            1,           -1 },
+	{ "MEGAsync",         NULL,       NULL,                                   0,            1,           -1 },
+	{ NULL,               NULL,       "meet.google.com is sharing a window.", 0,            1,           -1 },
 
 };
 
